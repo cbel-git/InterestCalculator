@@ -54,7 +54,6 @@ void CompoundInterestCalc::SetYearEndBal(int numYears,
             yearlyInterestTotal = 0.0;
         }
     }
-    //this->yearEndBal = balance;
 }
 
 void CompoundInterestCalc::SetYearEndBalNoDep(int numYears, double firstDeposit, double monthlyPayment,
