@@ -16,7 +16,6 @@ public:
     double GetDepositAmt();
     void SetMonthlyPayment(double monthlyPayment);
     double GetMonthlyPayment();
-    void SetTotalAmt(double firstDeposit, double monthlyPayment);
     double GetTotalAmt();
     double GetInterestAmt();
     double GetClosingBal();
