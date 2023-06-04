@@ -20,7 +20,6 @@ public:
     double GetTotalAmt();
     void SetInterestAmt(double initialDeposit, double monthlyDeposit , double interestRate, int numYears);
     double GetInterestAmt();
-    void SetClosingBal(double totalAmount, double interestGained);
     double GetClosingBal();
 
     void PrintCalc(std::vector<double> yearlyTotals, std::vector<double> yearlyInterest);
