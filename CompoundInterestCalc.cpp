@@ -1,5 +1,5 @@
 //
-// Created by codyh on 5/26/2023.
+// Created by cody belanger on 5/26/2023.
 //
 #include <iostream>
 #include <iomanip>
@@ -101,13 +101,13 @@ double CompoundInterestCalc::GetClosingBal() {
 // other functions
 
 void CompoundInterestCalc::getUserInfo(int& numYears, double& initialDeposit, double& monthlyDeposit, double& interestRate) {
-    cout << "numYears:" << endl;
+    cout << "Number of years:" << endl;
     cin >> numYears;
-    cout << "initialDeposit:" << endl;
+    cout << "Initial deposit amount:" << endl;
     cin >> initialDeposit;
-    cout << "monthlyDeposit:" << endl;
+    cout << "Monthly recurring deposit:" << endl;
     cin >> monthlyDeposit;
-    cout << "interestRate:" << endl;
+    cout << "Interest rate:" << endl;
     cin >> interestRate;
 }
 

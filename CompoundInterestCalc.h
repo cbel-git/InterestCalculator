@@ -2,7 +2,7 @@
 #define INTERESTCALCULATOR_COMPOUNDINTERESTCALC_H
 
 //
-// Created by codyh on 5/26/2023.
+// Created by cody belanger on 5/26/2023.
 //
 
 

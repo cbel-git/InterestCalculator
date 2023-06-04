@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
     int numYears = 5;
-    double initialDeposit = 1.00;
-    double monthlyDeposit  = 50.00;
-    double interestRate = 5.0;
+    double initialDeposit;
+    double monthlyDeposit;
+    double interestRate;
     vector<double> yearEndTotals;
     vector<double> yearEndInterest;
 
@@ -24,6 +24,10 @@ int main() {
         for (char& c : userInput) {
             c = tolower(c);
         }
+        if (userInput == "quit") {
+            cout << "Thank you for using this calculator!" << endl;
+            break;
+        }
 
 
         yearEndTotalsNoDep.clear();
@@ -32,7 +36,7 @@ int main() {
         yearEndInterest.clear();
 
         // get user information
-        //CompCalc.getUserInfo(numYears, initialDeposit, monthlyDeposit, interestRate);
+        CompCalc.getUserInfo(numYears, initialDeposit, monthlyDeposit, interestRate);
 
 
         // sets the respective variables initialDeposit and monthly deposit
@@ -48,6 +52,7 @@ int main() {
         CompCalc.SetYearEndBal(numYears, initialDeposit, monthlyDeposit, interestRate, yearEndTotals, yearEndInterest);
         CompCalc.SetYearEndBalNoDep(numYears, initialDeposit, monthlyDeposit, interestRate, yearEndTotalsNoDep, yearEndInterestNoDep);
 
+        // prints both tables with header to describe content
         cout << endl << "Year end amounts with monthly deposit of $" << monthlyDeposit << ":" << endl << endl;
         cout << setw(54) << setfill('*') << "" << endl;
         cout << setw(0) << setfill(' ') << "";
@@ -57,7 +62,7 @@ int main() {
         cout << setw(0) << setfill(' ') << "";
         CompCalc.PrintCalc(yearEndTotalsNoDep, yearEndInterestNoDep);
 
-
+        // allows user to re input data to determine what the best plan is
         cout << endl << endl;
         cout << "Type continue to re-input information, or quit to exit." << endl;
         cin >> userInput;
