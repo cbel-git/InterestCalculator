@@ -30,6 +30,7 @@ int main() {
         }
 
 
+
         yearEndTotalsNoDep.clear();
         yearEndInterestNoDep.clear();
         yearEndTotals.clear();
