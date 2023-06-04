@@ -28,7 +28,7 @@ public:
 
 
 
-    double GetYearEndBal();
+
 
     void getUserInfo(int& numYears, double& initialDeposit, double& monthlyDeposit, double& interestRate);
 private:

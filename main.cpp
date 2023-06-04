@@ -30,7 +30,7 @@ int main() {
         }
 
 
-
+        // clears vectors for re printing
         yearEndTotalsNoDep.clear();
         yearEndInterestNoDep.clear();
         yearEndTotals.clear();

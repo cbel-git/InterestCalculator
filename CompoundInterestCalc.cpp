@@ -40,11 +40,11 @@ void CompoundInterestCalc::SetYearEndBal(int numYears,
 
     for (int month = 1; month <= timeInMonths; month++) {
         balance += monthlyPayment; // Update balance by adding monthly payment
-        double monthlyInterest = balance * ((interestRate / 100) / 12);
-        balance += monthlyInterest;
+        double monthlyInterest = balance * ((interestRate / 100) / 12); // adds interest rate
+        balance += monthlyInterest; // increases balance with new values
         yearlyInterestTotal += monthlyInterest;
-        if (month % 12 == 0) {
-            yearlyTotals.push_back(balance);
+        if (month % 12 == 0) { //every 12 months, value is added to vector (one per year)
+            yearlyTotals.push_back(balance); // adds values to vector
             yearlyInterest.push_back(yearlyInterestTotal);
             yearlyInterestTotal = 0.0;
         }
@@ -60,8 +60,8 @@ void CompoundInterestCalc::SetYearEndBalNoDep(int numYears, double firstDeposit,
     double yearlyInterestTotal = 0.0;
 
     for (int month = 1; month <= timeInMonths; month++) {
-        double monthlyInterest = balance * ((interestRate / 100) / 12);
-        balance += monthlyInterest;
+        double monthlyInterest = balance * ((interestRate / 100) / 12); // adds interest
+        balance += monthlyInterest; // does not add a monthly deposit
         yearlyInterestTotal += monthlyInterest;
         if (month % 12 == 0) {
             yearlyTotalsNoInt.push_back(balance);
@@ -100,6 +100,8 @@ double CompoundInterestCalc::GetClosingBal() {
 
 // other functions
 
+
+// prints info to gather info from user
 void CompoundInterestCalc::getUserInfo(int& numYears, double& initialDeposit, double& monthlyDeposit, double& interestRate) {
     cout << "Number of years:" << endl;
     cin >> numYears;
@@ -111,6 +113,7 @@ void CompoundInterestCalc::getUserInfo(int& numYears, double& initialDeposit, do
     cin >> interestRate;
 }
 
+// prints table for user
 void CompoundInterestCalc::PrintCalc(std::vector<double> yearlyTotals, std::vector<double> yearlyInterest) {
     cout << "   Year" << "      " << "Year-End Balance" << "        " << "Yearly Interest" << endl;
     cout << setw(54) << setfill('*') << "" << endl;
