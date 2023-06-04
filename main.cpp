@@ -66,20 +66,6 @@ int main() {
         CompCalc.PrintCalc(yearEndTotalsNoDep, yearEndInterestNoDep);
 
 
-//        cout << "   Year" << "      " << "Year-End Balance" << "        " << "Yearly Interest" << endl;
-//        cout << setw(54) << setfill('*') << "" << endl;
-//        cout << setw(0) << setfill(' ') << "";
-//
-//        cout << fixed << setprecision(2);  // Set precision for floating-point values
-//
-//        for (int i = 0; i < yearEndTotals.size(); i++) {
-//            cout << setw(5) << i + 1 << "   |" << setw(15) << yearEndTotals[i] << setw(10) << "   |"
-//                 << setw(15) << right << yearEndInterest[i] << "    |" << endl;
-//        } // end of for loop
-//
-//        cout << setw(54) << setfill('*') << "" << endl;
-//        cout << setw(0) << setfill(' ') << "";
-
         cout << endl << endl;
         cout << "Type continue to re-input information, or quit to exit." << endl;
         cin >> userInput;
