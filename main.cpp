@@ -16,10 +16,6 @@ int main() {
 
     vector<double> yearEndTotalsNoDep;
     vector<double> yearEndInterestNoDep;
-    //FIXME remove variable declarations from here
-    //double totalAmount;
-    //double interestGained;
-    //double finalBalance;
     CompoundInterestCalc CompCalc;
 
     string userInput = "empty";
