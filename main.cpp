@@ -56,10 +56,13 @@ int main() {
         CompCalc.SetYearEndBal(numYears, initialDeposit, monthlyDeposit, interestRate, yearEndTotals, yearEndInterest);
         CompCalc.SetYearEndBalNoDep(numYears, initialDeposit, monthlyDeposit, interestRate, yearEndTotalsNoDep, yearEndInterestNoDep);
 
-
-
+        cout << endl << "Year end amounts with monthly deposit of $" << monthlyDeposit << ":" << endl << endl;
+        cout << setw(54) << setfill('*') << "" << endl;
+        cout << setw(0) << setfill(' ') << "";
         CompCalc.PrintCalc(yearEndTotals, yearEndInterest);
-        cout << endl;
+        cout << endl << "Year end amounts with NO monthly deposit:" << endl << endl;
+        cout << setw(54) << setfill('*') << "" << endl;
+        cout << setw(0) << setfill(' ') << "";
         CompCalc.PrintCalc(yearEndTotalsNoDep, yearEndInterestNoDep);
 
 
