@@ -20,15 +20,9 @@ int main() {
     string userInput = "empty";
     while (userInput != "quit") {
 
-
+        // converts userInput to lowercase
         for (char& c : userInput) {
             c = tolower(c);
-        }
-
-        // Check if input is "quit"
-        if (userInput == "quit") {
-            std::cout << "Exiting. Thank you for using our calculator!" << std::endl;
-            break;
         }
 
 
