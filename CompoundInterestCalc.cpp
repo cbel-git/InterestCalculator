@@ -11,11 +11,6 @@ using namespace std;
 
 // setters
 
-void CompoundInterestCalc::SetYears(int years) {
-    this->numYears = years;
-
-}
-
 void CompoundInterestCalc::SetInterestRate(double interest) {
     this->interestRate = interest;
 
@@ -79,10 +74,6 @@ void CompoundInterestCalc::SetYearEndBalNoDep(int numYears, double firstDeposit,
 
 // getters
 
-int CompoundInterestCalc::GetYears() {
-    return numYears;
-}
-
 double CompoundInterestCalc::GetDepositAmt() {
     return monthlyDeposit;
 }
@@ -101,11 +92,6 @@ double CompoundInterestCalc::GetInterestRate() {
 
 double CompoundInterestCalc::GetClosingBal() {
     return finalBalance;
-}
-
-
-double CompoundInterestCalc::GetYearEndBal() {
-    return yearEndBal;
 }
 
 

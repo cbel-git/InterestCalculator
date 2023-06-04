@@ -10,7 +10,6 @@ int main() {
     double initialDeposit = 1.00;
     double monthlyDeposit  = 50.00;
     double interestRate = 5.0;
-    double yearEndBal;
     vector<double> yearEndTotals;
     vector<double> yearEndInterest;
 
@@ -32,6 +31,9 @@ int main() {
             break;
         }
 
+
+        yearEndTotalsNoDep.clear();
+        yearEndInterestNoDep.clear();
         yearEndTotals.clear();
         yearEndInterest.clear();
 
