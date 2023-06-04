@@ -24,12 +24,8 @@ public:
     double GetInterestAmt();
     double GetClosingBal();
 
+    // extra functions
     void PrintCalc(std::vector<double> yearlyTotals, std::vector<double> yearlyInterest);
-
-
-
-
-
     void getUserInfo(int& numYears, double& initialDeposit, double& monthlyDeposit, double& interestRate);
 private:
     int numYears;
