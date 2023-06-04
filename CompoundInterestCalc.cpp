@@ -2,6 +2,7 @@
 // Created by codyh on 5/26/2023.
 //
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include "CompoundInterestCalc.h"
 using namespace std;
@@ -29,22 +30,7 @@ void CompoundInterestCalc::SetMonthlyPayment(double monthlyPayment) {
 
 }
 
-void CompoundInterestCalc::SetTotalAmt(double firstDeposit, double monthlyPayment) {
-    this->totalAmount = firstDeposit + monthlyPayment;
 
-}
-
-void CompoundInterestCalc::SetInterestAmt(double initialDeposit, double monthlyDeposit, double interestRate, int years) {
-    this->interestGained = ((initialDeposit + monthlyDeposit) * ((interestRate / 100) * 12));
-
-}
-
-
-
-void CompoundInterestCalc::SetClosingBal(double totalPayment, double interestEarned ) {
-    this->finalBalance = totalPayment + interestEarned;
-
-}
 
 void CompoundInterestCalc::SetYearEndBal(int numYears,
                                          double firstDeposit,
@@ -70,6 +56,27 @@ void CompoundInterestCalc::SetYearEndBal(int numYears,
     }
     //this->yearEndBal = balance;
 }
+
+void CompoundInterestCalc::SetYearEndBalNoDep(int numYears, double firstDeposit, double monthlyPayment,
+                                              double interestRate, std::vector<double> &yearlyTotalsNoInt,
+                                              std::vector<double> &yearlyInterestNoInt) {
+    int timeInMonths = numYears * 12;
+    double balance = firstDeposit; // Set initial balance as firstDeposit
+    double yearlyTotal = balance;
+    double yearlyInterestTotal = 0.0;
+
+    for (int month = 1; month <= timeInMonths; month++) {
+        double monthlyInterest = balance * ((interestRate / 100) / 12);
+        balance += monthlyInterest;
+        yearlyInterestTotal += monthlyInterest;
+        if (month % 12 == 0) {
+            yearlyTotalsNoInt.push_back(balance);
+            yearlyInterestNoInt.push_back(yearlyInterestTotal);
+            yearlyInterestTotal = 0.0;
+        }
+    }
+}
+
 
 // getters
 
@@ -117,6 +124,23 @@ void CompoundInterestCalc::getUserInfo(int& numYears, double& initialDeposit, do
     cin >> monthlyDeposit;
     cout << "interestRate:" << endl;
     cin >> interestRate;
+}
+
+void CompoundInterestCalc::PrintCalc(std::vector<double> yearlyTotals, std::vector<double> yearlyInterest) {
+    cout << "   Year" << "      " << "Year-End Balance" << "        " << "Yearly Interest" << endl;
+    cout << setw(54) << setfill('*') << "" << endl;
+    cout << setw(0) << setfill(' ') << "";
+
+    cout << fixed << setprecision(2);  // Set precision for floating-point values
+
+    for (int i = 0; i < yearlyTotals.size(); i++) {
+        cout << setw(5) << i + 1 << "   |" << setw(15) << yearlyTotals[i] << setw(10) << "   |"
+             << setw(15) << right << yearlyInterest[i] << "    |" << endl;
+    } // end of for loop
+
+    cout << setw(54) << setfill('*') << "" << endl;
+    cout << setw(0) << setfill(' ') << "";
+
 }
 
 

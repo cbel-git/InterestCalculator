@@ -22,7 +22,13 @@ public:
     double GetInterestAmt();
     void SetClosingBal(double totalAmount, double interestGained);
     double GetClosingBal();
+
+    void PrintCalc(std::vector<double> yearlyTotals, std::vector<double> yearlyInterest);
+
     void SetYearEndBal(int numYears, double firstDeposit, double monthlyPayment, double interestRate, std::vector<double>& yearlyTotals, std::vector<double>& yearlyInterest);
+    void SetYearEndBalNoDep(int numYears, double firstDeposit, double monthlyPayment, double interestRate, std::vector<double>& yearlyTotalsNoInt, std::vector<double>& yearlyInterestNoInt);
+
+
     double GetYearEndBal();
 
     void getUserInfo(int& numYears, double& initialDeposit, double& monthlyDeposit, double& interestRate);

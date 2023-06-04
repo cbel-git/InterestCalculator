@@ -13,6 +13,9 @@ int main() {
     double yearEndBal;
     vector<double> yearEndTotals;
     vector<double> yearEndInterest;
+
+    vector<double> yearEndTotalsNoDep;
+    vector<double> yearEndInterestNoDep;
     //FIXME remove variable declarations from here
     //double totalAmount;
     //double interestGained;
@@ -51,22 +54,28 @@ int main() {
 
         // calculates year end balances, adds to vector yearEndTotals
         CompCalc.SetYearEndBal(numYears, initialDeposit, monthlyDeposit, interestRate, yearEndTotals, yearEndInterest);
+        CompCalc.SetYearEndBalNoDep(numYears, initialDeposit, monthlyDeposit, interestRate, yearEndTotalsNoDep, yearEndInterestNoDep);
 
 
 
-        cout << "   Year" << "      " << "Year-End Balance" << "        " << "Yearly Interest" << endl;
-        cout << setw(54) << setfill('*') << "" << endl;
-        cout << setw(0) << setfill(' ') << "";
+        CompCalc.PrintCalc(yearEndTotals, yearEndInterest);
+        cout << endl;
+        CompCalc.PrintCalc(yearEndTotalsNoDep, yearEndInterestNoDep);
 
-        cout << fixed << setprecision(2);  // Set precision for floating-point values
 
-        for (int i = 0; i < yearEndTotals.size(); i++) {
-            cout << setw(5) << i + 1 << "   |" << setw(15) << yearEndTotals[i] << setw(10) << "   |"
-                 << setw(15) << right << yearEndInterest[i] << "    |" << endl;
-        } // end of for loop
-
-        cout << setw(54) << setfill('*') << "" << endl;
-        cout << setw(0) << setfill(' ') << "";
+//        cout << "   Year" << "      " << "Year-End Balance" << "        " << "Yearly Interest" << endl;
+//        cout << setw(54) << setfill('*') << "" << endl;
+//        cout << setw(0) << setfill(' ') << "";
+//
+//        cout << fixed << setprecision(2);  // Set precision for floating-point values
+//
+//        for (int i = 0; i < yearEndTotals.size(); i++) {
+//            cout << setw(5) << i + 1 << "   |" << setw(15) << yearEndTotals[i] << setw(10) << "   |"
+//                 << setw(15) << right << yearEndInterest[i] << "    |" << endl;
+//        } // end of for loop
+//
+//        cout << setw(54) << setfill('*') << "" << endl;
+//        cout << setw(0) << setfill(' ') << "";
 
         cout << endl << endl;
         cout << "Type continue to re-input information, or quit to exit." << endl;
